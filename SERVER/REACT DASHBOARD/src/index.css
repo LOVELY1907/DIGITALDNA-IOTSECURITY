@@ -1,0 +1,197 @@
+:root{
+  --bg:#071225;
+  --panel:#071f2c;
+  --accent:#00eaff;
+  --muted:#9ac7d1;
+  --danger:#ff4d6d;
+  --success:#7fffd4;
+}
+
+/* RESET */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: Inter, system-ui;
+  color: white;
+}
+
+* { box-sizing: border-box; }
+
+/* MAIN LAYOUT (RESTORED) */
+.app {
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  gap: 18px;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.right {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* PANELS — GLOW + CLEAN */
+.panel {
+  background: rgba(0,0,0,0.28);
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid rgba(0,255,255,0.18);
+  box-shadow: 0 0 18px rgba(0,255,255,0.10);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.7s ease-out;
+}
+
+/* TOP CAMERA ROW (RESTORED EXACT SIZES) */
+.cameraRow {
+  display: flex;
+  gap: 14px;
+}
+
+.camBox {
+  flex: 1;
+  height: 260px;
+  background: #031117;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0,255,255,0.15);
+  transition: 0.3s;
+}
+
+.camBox:hover {
+  box-shadow: 0 0 22px rgba(0,255,255,0.35);
+}
+
+.frameImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.statsCol {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.statCard {
+  flex: 1;
+  background: rgba(0,255,255,0.05);
+  border: 1px solid rgba(0,255,255,0.25);
+  border-radius: 12px;
+  text-align: center;
+  padding: 14px;
+  font-weight: 800;
+  color: var(--accent);
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* MAP + MAIN PANEL */
+.mainPanel {
+  height: 260px;
+  border-radius: 12px;
+  background: linear-gradient(180deg,#071421,#06101b);
+}
+
+.mapPanel {
+  height: 200px;
+  border-radius: 12px;
+  background: linear-gradient(180deg,#031423,#05181e);
+}
+
+/* RIGHT COLUMN (RESTORED) */
+.nodeFeedPanel {
+  height: 350px;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+/* NODE ITEMS */
+.nodeItem {
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.nodeItem:hover {
+  background: rgba(0,255,255,0.08);
+  transform: scale(1.02);
+  box-shadow: 0 0 12px rgba(0,255,255,0.25);
+}
+
+.nodeName { color: var(--accent); font-weight: 800; }
+.nodeIdSmall { color: var(--muted); font-size: 12px; }
+.nodeStatusSafe { color: var(--success); font-weight: 900; }
+.nodeStatusBad { color: var(--danger); font-weight: 900; animation: alertBlink 1.3s infinite; }
+
+/* ALERTS */
+.alertsBox {
+  height: 200px;
+  overflow-y: auto;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,77,109,0.4);
+}
+
+.alertItem {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.alertIcon {
+  font-size: 18px;
+  color: var(--danger);
+  animation: alertPulse 1.2s infinite;
+  filter: drop-shadow(0 0 6px var(--danger));
+}
+
+/* HEADINGS */
+.h3 {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(0,255,255,0.4);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity:0; transform: translateY(10px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 5px rgba(0,255,255,0.15); }
+  50% { box-shadow: 0 0 18px rgba(0,255,255,0.35); }
+  100% { box-shadow: 0 0 5px rgba(0,255,255,0.15); }
+}
+
+@keyframes alertBlink {
+  0% { opacity:1; }
+  50% { opacity:0.4; }
+  100% { opacity:1; }
+}
+
+@keyframes alertPulse {
+  0% { transform:scale(1); }
+  50% { transform:scale(1.25); }
+  100% { transform:scale(1); }
+}

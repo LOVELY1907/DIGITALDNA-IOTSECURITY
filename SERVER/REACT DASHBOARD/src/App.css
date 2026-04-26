@@ -1,0 +1,273 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.app {
+  display: flex;
+  background: radial-gradient(circle at top, #051a2a, #020711 60%);
+  color: #eafcff;
+  height: 100vh;
+  padding: 16px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.left,
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  margin-right: 10px;
+}
+
+.panel {
+  background: rgba(3, 16, 32, 0.96);
+  border-radius: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 255, 255, 0.06);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.5);
+}
+
+.h3 {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #47f5ff;
+  text-transform: uppercase;
+}
+
+.smallMuted {
+  color: #7aa6b1;
+}
+
+.cameraRow {
+  display: flex;
+  gap: 12px;
+}
+
+.camBox {
+  flex: 1.5;
+  min-height: 220px;
+  border-radius: 12px;
+  background: radial-gradient(circle at top, #092235, #020915);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.frameImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.camPlaceholder {
+  text-align: center;
+}
+
+.statsCol {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statCard {
+  background: linear-gradient(135deg, #06182a, #031019);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 11px;
+  color: #7aa6b1;
+}
+
+.statValue {
+  font-size: 20px;
+  color: #eafcff;
+  margin-top: 4px;
+}
+
+.statValueSmall {
+  font-size: 13px;
+  color: #eafcff;
+  margin-top: 4px;
+}
+
+/* Live node feed */
+
+.feedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nodeFeedPanel {
+  margin-top: 8px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.nodeItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 6px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  background: radial-gradient(circle at left, rgba(0, 255, 255, 0.18), transparent);
+}
+
+.nodeItem:hover {
+  background: radial-gradient(circle at left, rgba(0, 255, 255, 0.28), transparent);
+}
+
+.nodeInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.nodeName {
+  font-size: 14px;
+  font-weight: 700;
+  color: #eafcff;
+}
+
+.nodeIdSmall {
+  font-size: 11px;
+  color: #7aa6b1;
+}
+
+.nodeStatusSafe {
+  color: #25ffb8;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.nodeStatusBad {
+  color: #ff4c68;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Map */
+
+.mapPanel {
+  margin-top: 8px;
+  height: 210px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #031423, #04151d);
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.mapEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.mapGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 7px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.mapNode {
+  padding: 6px 7px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mapNodeSafe {
+  background: radial-gradient(circle at top, rgba(0, 255, 190, 0.25), transparent);
+}
+
+.mapNodeBad {
+  background: radial-gradient(circle at top, rgba(255, 70, 70, 0.3), transparent);
+}
+
+.mapNodeSelected {
+  box-shadow: 0 0 12px rgba(0, 214, 214, 0.7);
+}
+
+.mapNodeName {
+  color: #eafcff;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.mapNodeStatus {
+  font-size: 10px;
+  color: #7aa6b1;
+}
+
+/* Alerts */
+
+.alertsPanel {
+  margin-top: 6px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.alertItem {
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+  font-size: 13px;
+}
+
+/* Scrollbar */
+
+.scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(84, 192, 224, 0.5);
+  border-radius: 10px;
+}
