@@ -1,0 +1,10 @@
+flask
+flask-socketio
+eventlet
+flask-cors
+psutil
+opencv-python
+numpy
+requests
+
+
